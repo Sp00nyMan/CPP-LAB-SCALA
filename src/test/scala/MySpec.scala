@@ -1,3 +1,4 @@
+import Lab6._
 import org.scalatest._
 
 import scala.collection.mutable
@@ -41,5 +42,17 @@ class MySpec extends  FlatSpec{
     val array = List[Int](2, 1, 6, 4, 213, 23, 22, 146, 7, 9, 17)
     assert(Main.getStartIndex(array) == 8)
     assert(Main.getStartIndexTailRec(array) == 8)
+  }
+  "flipAndMulAndGetThird" must "reverse array, multiple each element by two and return the third element" in {
+    val array = List[Int](4, 3, 2, 12, 17, 23, 22, 146, 7, 9, 17, 81)
+    assert(flipAndMulAndGetThird(array) == 18)
+  }
+  "findMinUsingFold" must "return min element in array" in {
+    val array = List[Int](4, 3, 2, 12, 17, 23, 22, 146, 7, 9, 17, 81)
+    assert(findMinUsingFold(array) == 2)
+  }
+  "getOnlyFibonacci" must "return array with elements of origin array which are fibonacci numbers" in {
+    val array = List[Int](4, 3, 2, 12, 17, 23, 22, 146, 7, 9, 17, 81)
+    assert(getOnlyFibonacci(array) == List(3, 2))
   }
 }
